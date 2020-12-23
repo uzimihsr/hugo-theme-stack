@@ -1,14 +1,4 @@
 {
-<<<<<<< HEAD
- "compilerOptions": {
-  "baseUrl": ".",
-  "paths": {
-   "*": [
-    "*"
-   ]
-  }
- }
-=======
     "compilerOptions": {
         "baseUrl": ".",
         "paths": {
@@ -17,5 +7,4 @@
             ]
         },
     }
->>>>>>> df74fe5f19ff0e59a4ca24bb7b33a78b15eff5f1
 }
