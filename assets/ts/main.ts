@@ -5,11 +5,10 @@
 *   @website: https://jimmycai.com
 *   @link: https://github.com/CaiJimmy/hugo-theme-stack
 */
-
-import { createGallery } from "./gallery"
-import { getColor } from './color';
-import menu from './menu';
-import createElement from './createElement';
+import StackGallery from "ts/gallery";
+import { getColor } from 'ts/color';
+import menu from 'ts/menu';
+import createElement from 'ts/createElement';
 
 let Stack = {
     init: () => {
@@ -18,23 +17,10 @@ let Stack = {
          */
         menu();
 
-        if (document.querySelector('.article-content')) {
-            createGallery('.article-content');
+        const articleContent = document.querySelector('.article-content') as HTMLElement;
+        if (articleContent) {
+            new StackGallery(articleContent);
         }
-
-        /**
-         * Add color to tags
-         */
-        document.querySelectorAll('.color-tag').forEach(async (tag: HTMLLinkElement) => {
-            const imageURL = tag.getAttribute('data-image'),
-                key = tag.getAttribute('data-key'),
-                hash = tag.getAttribute('data-hash');
-
-            const colors = await getColor(key, hash, imageURL);
-
-            tag.style.color = colors.Vibrant.bodyTextColor;
-            tag.style.background = colors.Vibrant.hex;
-        })
 
         /**
          * Add linear gradient background to tile style article
