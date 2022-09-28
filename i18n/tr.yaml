@@ -16,12 +16,8 @@ list:
         one: Alt bölüm
         other: Alt bölümler
 
-archives:
-    categories:
-        other: Kategoriler
-
 article:
-    relatedContents:
+    relatedContent:
         other: Alakalı içerikler
     lastUpdatedOn:
         other: Son güncelleme
